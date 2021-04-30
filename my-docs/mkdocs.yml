@@ -1,6 +1,7 @@
 site_name: MyDocs
 nav:
   - Home: index.md
+  - AWS-cli: AWSCLI.md
   - Mkdocs: mkdocs.md
   - About: about.md
 theme: readthedocs
