@@ -1,5 +1,6 @@
-site_name: MkLorum
+site_name: MyDocs
 nav:
   - Home: index.md
+  - Mkdocs: mkdocs.md
   - About: about.md
 theme: readthedocs
