@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>About - MyDocs</title>
+  <title>Tips and tricks for using the AWS cli - MyDocs</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "About";
-    var mkdocs_page_input_path = "about.md";
+    var mkdocs_page_name = "Tips and tricks for using the AWS cli";
+    var mkdocs_page_input_path = "awsCLI.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -59,10 +59,8 @@
                     <li class="toctree-l1"><a class="reference internal" href="../mkdocs/">Mkdocs</a>
                     </li>
                 </ul>
-                <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">About</a>
-    <ul class="current">
-    </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../about/">About</a>
                     </li>
                 </ul>
       </div>
@@ -86,7 +84,7 @@
     
       
     
-    <li>About</li>
+    <li>Tips and tricks for using the AWS cli</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -97,21 +95,47 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="this-is-my-personal-documentation-repository">This is my personal documentation repository</h1>
-<p>Links to interesting websites
-Code examples I've seen
-And so much more</p>
+                <h1 id="tips-and-tricks-for-using-the-aws-cli">Tips and tricks for using the AWS cli</h1>
+<h2 id="environment">Environment</h2>
+<ul>
+<li><code>export AWS_PROFILE</code> to avoid having to add --profile to every command</li>
+</ul>
+<h2 id="query-and-parse-the-output-from-aws">Query and parse the output from aws</h2>
+<p>Examples:</p>
+<ul>
+<li>List stacks with a specific status:</li>
+</ul>
+<pre><code>aws cloudformation list-stacks --query &quot;StackSummaries[?StackStatus!='DELETE_COMPLETE'].[StackName,StackId,StackStatus]&quot; --region eu-central-1
+</code></pre>
+<ul>
+<li>List policies with a specific tag</li>
+</ul>
+<pre><code>aws organizations list-policies --filter TAG_POLICY --query &quot;Policies[?Name='A-mandatory-tags'].[Id]&quot;
+</code></pre>
+<ul>
+<li>Query a stack for a specific output value</li>
+</ul>
+<pre><code>aws cloudformation describe-stacks --stack-name shared-devenvironment-vpc-stack --query &quot;Stacks[].Outputs[?OutputKey=='PrivateSubnet1'].[OutputValue]&quot; --output text
+</code></pre>
+<ul>
+<li>Query organization to get specific some values</li>
+</ul>
+<pre><code>aws organizations list-accounts --query &quot;Accounts[].[Name,Id,Email]&quot; --output table
+</code></pre>
+<h2 id="create-and-deploy-using-cloudformation">Create and deploy using cloudformation</h2>
+<p>Examples:</p>
+<pre><code>aws cloudformation update-stack --stack-name ITU-CTSetup-shared-VPC-qa --template-body file://vpctemplate.yml --parameters file://ITU-lz-vpc-qa-eu-central-1.json --region eu-central-1
+aws cloudformation create-stack-set \
+    --stack-set-name ITU-CTSetup-guarddutyNotifications \
+    --template-body file://guardduty-notifications.yml \
+    --region eu-west-1 \
+    --execution-role-name AWSControlTowerExecution
+    --administration-role-arn &quot;arn:aws:iam::185563819092:role/service-role/AWSControlTowerStackSetRole&quot;
+</code></pre>
               
             </div>
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-      
-        <a href="../mkdocs/" class="btn btn-neutral" title="Mkdocs"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-      
-    </div>
   
 
   <hr/>
@@ -134,8 +158,6 @@ And so much more</p>
   <div class="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
       
-      
-        <span><a href="../mkdocs/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
     </span>
