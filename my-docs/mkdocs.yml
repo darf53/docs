@@ -3,6 +3,7 @@ nav:
   - Home: index.md
   - AWS-cli: awsCLI.md
   - Mkdocs: mkdocs.md
+  - Learning: learning.md
   - Videos: videos.md
   - Links: links.md
   - About: about.md
