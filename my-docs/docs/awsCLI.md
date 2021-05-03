@@ -37,11 +37,14 @@ aws organizations list-accounts --query "Accounts[].[Name,Id,Email]" --output ta
 Examples:
 
 ```
-aws cloudformation update-stack --stack-name ITU-CTSetup-shared-VPC-qa --template-body file://vpctemplate.yml --parameters file://ITU-lz-vpc-qa-eu-central-1.json --region eu-central-1
+aws cloudformation update-stack --stack-name CTSetup-shared-VPC-qa --template-body file://vpctemplate.yml --parameters file://lz-vpc-central.json --region eu-central-1
+```
+
+```
 aws cloudformation create-stack-set \
-	--stack-set-name ITU-CTSetup-guarddutyNotifications \
+	--stack-set-name CTSetup-guarddutyNotifications \
 	--template-body file://guardduty-notifications.yml \
 	--region eu-west-1 \
 	--execution-role-name AWSControlTowerExecution
-	--administration-role-arn "arn:aws:iam::185563819092:role/service-role/AWSControlTowerStackSetRole"
+	--administration-role-arn "arn:aws:iam::XXXXXX:role/service-role/AWSControlTowerStackSetRole"
 ```
