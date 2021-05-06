@@ -22,3 +22,23 @@
 4. Install AWScli
 
 ```
+```
+
+5. Install git-remote-codecommit
+
+```
+pip install git-remote-codecommit
+```
+
+6. Install rain, commandline tool to work with cloudformation
+
+```
+pip install rain
+```
+
+7. Install youtube-dl to wacht youtube video's off-line
+```
+brew install youtube-dl
+```
+
+8. Install [sublime](https://www.sublimetext.com)
