@@ -5,6 +5,7 @@ nav:
   - Mkdocs: mkdocs.md
   - Learning: learning.md
   - Macbook: mac_install.md
+  - ldapsearch: ldap_search.md
   - Videos: videos.md
   - Links: links.md
   - About: about.md
