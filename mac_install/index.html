@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Mkdocs - MyDocs</title>
+  <title>Macbook - MyDocs</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Mkdocs";
-    var mkdocs_page_input_path = "mkdocs.md";
+    var mkdocs_page_name = "Macbook";
+    var mkdocs_page_input_path = "mac_install.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -55,24 +55,18 @@
                     <li class="toctree-l1"><a class="reference internal" href="../awsCLI/">AWS-cli</a>
                     </li>
                 </ul>
-                <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Mkdocs</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#installation-and-usage">Installation and usage</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#commands">Commands</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#project-layout">Project layout</a>
-    </li>
-    </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../mkdocs/">Mkdocs</a>
                     </li>
                 </ul>
                 <ul>
                     <li class="toctree-l1"><a class="reference internal" href="../learning/">Learning</a>
                     </li>
                 </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../mac_install/">Macbook</a>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Macbook</a>
+    <ul class="current">
+    </ul>
                     </li>
                 </ul>
                 <ul>
@@ -112,7 +106,7 @@
     
       
     
-    <li>Mkdocs</li>
+    <li>Macbook</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -123,32 +117,56 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="welcome-to-my-documentation-site">Welcome to my documentation site</h1>
-<p>For full documentation visit <a href="https://www.mkdocs.org">mkdocs.org</a>.</p>
-<h2 id="installation-and-usage">Installation and usage</h2>
+                <h1 id="installing-a-new-mac">Installing a new mac</h1>
+<ol>
+<li>
+<p>Setup SSH keys</p>
+</li>
+<li>
+<p>Install Brew</p>
 <ul>
-<li>Install the software: <code>pip install mkdocs</code></li>
-<li>Clone the repo: <code>git clone git@github.com:darf53/docs.git</code></li>
-<li>Create a new documentation site: <code>mkdocs new my-docs</code></li>
-<li>Add content and test your site locally: <code>mkdocs serve</code></li>
-<li>Make sure your site is not uploaded to git: <code>echo "site/" &gt;&gt; .gitignore</code></li>
-<li>Hosting your site on github pages: <code>mkdocs gh-deploy</code></li>
-<li>This will deploy the site to a seperate branch called <code>gh-pages</code></li>
-<li>And will make it visible at <a href="https://darf53.github.io/docs/">github</a></li>
+<li><a href="https://brew.sh">Install Brew</a></li>
+<li>$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</li>
 </ul>
-<h2 id="commands">Commands</h2>
+</li>
+<li>
+<p>Install Python3</p>
 <ul>
-<li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
-<li><code>mkdocs serve</code> - Start the live-reloading docs server.</li>
-<li><code>mkdocs build</code> - Build the documentation site.</li>
-<li><code>mkdocs -h</code> - Print help message and exit.</li>
+<li><a href="https://opensource.com/article/19/5/python-3-default-mac">Install ptyhon3 on Mac</a></li>
+<li>$ brew install pyenv</li>
+<li>$ pyenv install 3.9.4</li>
+<li>$ pyenv global 3.9.4</li>
+<li>$ echo -e 'if command -v pyenv 1&gt;/dev/null 2&gt;&1; then\n  eval "$(pyenv init -)"\nfi' &gt;&gt; ~/.zshrc</li>
+<li>Update .zshrc or .bashrc</li>
 </ul>
-<h2 id="project-layout">Project layout</h2>
-<pre><code>mkdocs.yml    # The configuration file.
-docs/
-    index.md  # The documentation homepage.
-    ...       # Other markdown pages, images and other files.
+</li>
+</ol>
+<pre><code>    if command -v pyenv 1&gt;/dev/null 2&gt;&amp;1; then
+    eval &quot;$(pyenv init -)&quot;
+    fi
 </code></pre>
+<ol>
+<li>Install AWScli</li>
+</ol>
+<pre><code></code></pre>
+<ol>
+<li>Install git-remote-codecommit</li>
+</ol>
+<pre><code>pip install git-remote-codecommit
+</code></pre>
+<ol>
+<li>Install rain, commandline tool to work with cloudformation</li>
+</ol>
+<pre><code>pip install rain
+</code></pre>
+<ol>
+<li>Install youtube-dl to wacht youtube video's off-line</li>
+</ol>
+<pre><code>brew install youtube-dl
+</code></pre>
+<ol>
+<li>Install <a href="https://www.sublimetext.com">sublime</a></li>
+</ol>
               
             </div>
           </div>
@@ -156,10 +174,10 @@ docs/
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../learning/" class="btn btn-neutral float-right" title="Learning">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../ldap_search/" class="btn btn-neutral float-right" title="ldapsearch">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../awsCLI/" class="btn btn-neutral" title="AWS-cli"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../learning/" class="btn btn-neutral" title="Learning"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -185,10 +203,10 @@ docs/
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../awsCLI/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../learning/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../learning/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../ldap_search/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
