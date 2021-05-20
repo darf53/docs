@@ -1,6 +1,7 @@
 site_name: MyDocs
 nav:
   - Home: index.md
+  - Python: python.md
   - AWS-cli: awsCLI.md
   - Mkdocs: mkdocs.md
   - Learning: learning.md
