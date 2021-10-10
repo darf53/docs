@@ -5,6 +5,7 @@ nav:
   - AWS-cli: awsCLI.md
   - Mkdocs: mkdocs.md
   - Learning: learning.md
+  - CoderDojo: coderDojo.md
   - Macbook: mac_install.md
   - VSCode: vscode.md
   - ldapsearch: ldap_search.md
