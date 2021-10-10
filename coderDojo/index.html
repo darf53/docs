@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>ldapsearch - MyDocs</title>
+  <title>Page with CoderDojo Stuff to do - MyDocs</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "ldapsearch";
-    var mkdocs_page_input_path = "ldap_search.md";
+    var mkdocs_page_name = "Page with CoderDojo Stuff to do";
+    var mkdocs_page_input_path = "coderDojo.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -74,10 +74,8 @@
                     <li class="toctree-l1"><a class="reference internal" href="../vscode/">VSCode</a>
                     </li>
                 </ul>
-                <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">ldapsearch</a>
-    <ul class="current">
-    </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../ldap_search/">ldapsearch</a>
                     </li>
                 </ul>
                 <ul>
@@ -113,7 +111,7 @@
     
       
     
-    <li>ldapsearch</li>
+    <li>Page with CoderDojo Stuff to do</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -125,45 +123,13 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="how-to-use-ldapsearch">How to use ldapsearch</h1>
-<pre><code>ldapsearch -x -b &quot;cn=Users,dc=dev,dc=acme,dc=test&quot; -H ldap://10.0.1.18 -D &quot;cn=Administrator,cn=Users,dc=dev,dc=acme,dc=test&quot; -w xxxxxx &quot;sAMAccountName=*&quot; userPrincipalName 
-</code></pre>
-<p>Or to delete a user</p>
-<pre><code>ldapdelete -v -c -D &quot;cn=Administrator,cn=Users,dc=dev,dc=acme,dc=test&quot; -W  sAMAccountName=user_to_delete
-</code></pre>
-<p>Adding a user</p>
-<pre><code>ldapadd -h  localhost  -D cn=Administrator -w password -f user3.ldif
-</code></pre>
-<p>Below are contents of user3.ldif</p>
-<pre><code>dn: cn=user3,cn=Users,dc=acme,dc=com
-changetype: add
-uid: user3
-mail: user
-givenName: user3
-cn: testuser
-sn: testuser
-userpassword: abc
-description:  user3 description
-objectClass: top
-objectClass: person
-objectClass: organizationalperson
-objectClass: inetorgperson
-objectClass: orcluser
-objectClass: orcluserV2
-</code></pre>
+                <h1 id="page-with-coderdojo-stuff-to-do">Page with CoderDojo Stuff to do</h1>
+<h2 id="coding">Coding</h2>
+<p><a href="https://cdjeeklo.gitlab.io/html/">CDJ Eeklo - Javascript</a></p>
               
             </div>
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../videos/" class="btn btn-neutral float-right" title="Videos">Next <span class="icon icon-circle-arrow-right"></span></a>
-      
-      
-        <a href="../vscode/" class="btn btn-neutral" title="VSCode"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-      
-    </div>
   
 
   <hr/>
@@ -187,10 +153,6 @@ objectClass: orcluserV2
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../vscode/" style="color: #fcfcfc">&laquo; Previous</a></span>
-    
-    
-      <span><a href="../videos/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
